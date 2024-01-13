@@ -1,6 +1,8 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +19,8 @@ public class Main {
 		addEdge(adj, 0, 2); 
 		addEdge(adj, 1, 2); 
 		addEdge(adj, 1, 3);
-        printGraph(adj);
+        // printGraph(adj);
+        BFS(adj,v,0);
 
     }
 
@@ -39,4 +42,37 @@ public class Main {
             System.out.println();
         }
     }
+
+    private static void BFS(ArrayList<ArrayList<Integer>> adj,int size, int s) 
+    {
+        ArrayList<Boolean> visited = new ArrayList<Boolean>(size);
+        for(int i = 0; i < size; i++)
+        {
+            visited.add(false);
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(s);
+        visited.add(s,true);
+        
+
+        while(queue.isEmpty() == false)
+        {
+            int u = queue.poll();
+            System.out.print(u + " ");
+
+            for(int v: adj.get(u))
+            {
+                if(visited.get(v) == false)
+                {
+                    queue.add(v);
+                    visited.add(v,true);
+                }
+            }
+
+        }
+
+
+    }
+
 }
