@@ -2,10 +2,14 @@ package graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
+
+        // PriorityQueue<Integer> pQueue = new PriorityQueue<>();
+        // pQueue.add 
 
         int v = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
