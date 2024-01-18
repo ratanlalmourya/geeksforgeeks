@@ -1,81 +1,39 @@
 package graph;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
-
-        // PriorityQueue<Integer> pQueue = new PriorityQueue<>();
-        // pQueue.add 
-
         int v = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-        
-        for(int i = 0; i < v; i++)
-        {
+
+        for (int i = 0; i < v; i++) {
             adj.add(new ArrayList<Integer>());
         }
 
-        addEdge(adj, 0, 1); 
-		addEdge(adj, 0, 2); 
-		addEdge(adj, 1, 2); 
-		addEdge(adj, 1, 3);
+        addEdge(adj, 0, 1);
+        addEdge(adj, 0, 2);
+        addEdge(adj, 1, 2);
+        addEdge(adj, 1, 3);
         printGraph(adj);
-        BFS(adj,v,0);
+
+        GraphUtils graphUtils = new GraphUtils();
+        graphUtils.BFS(adj, v, 0);
 
     }
 
-
-    private static void addEdge(ArrayList<ArrayList<Integer>> adj, int u,int v)
-    {
+    private static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
         adj.get(u).add(v);
         adj.get(v).add(u);
     }
 
-    private static void printGraph(ArrayList<ArrayList<Integer>> adj)
-    {
-        for(int i = 0; i < adj.size(); i++)
-        {
-            for(int j = 0; j < adj.get(i).size(); j++)
-            {
+    private static void printGraph(ArrayList<ArrayList<Integer>> adj) {
+        for (int i = 0; i < adj.size(); i++) {
+            for (int j = 0; j < adj.get(i).size(); j++) {
                 System.out.print(adj.get(i).get(j) + " ");
             }
             System.out.println();
         }
-    }
-
-    private static void BFS(ArrayList<ArrayList<Integer>> adj,int size, int s) 
-    {
-        ArrayList<Boolean> visited = new ArrayList<Boolean>(size);
-        for(int i = 0; i < size; i++)
-        {
-            visited.add(false);
-        }
-
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(s);
-        visited.add(s,true);
-        
-
-        while(queue.isEmpty() == false)
-        {
-            int u = queue.poll();
-            System.out.print(u + " ");
-
-            for(int v: adj.get(u))
-            {
-                if(visited.get(v) == false)
-                {
-                    queue.add(v);
-                    visited.add(v,true);
-                }
-            }
-
-        }
-
-
     }
 
 }
