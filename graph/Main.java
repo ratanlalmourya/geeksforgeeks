@@ -2,7 +2,6 @@ package graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class Main {
@@ -23,7 +22,7 @@ public class Main {
 		addEdge(adj, 0, 2); 
 		addEdge(adj, 1, 2); 
 		addEdge(adj, 1, 3);
-        // printGraph(adj);
+        printGraph(adj);
         BFS(adj,v,0);
 
     }
