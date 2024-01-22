@@ -25,7 +25,7 @@ public class Main {
 
     }
 
-    private static  void DFSForNotConnectedGraphs(ArrayList<ArrayList<Integer>> adj,int v) {
+    private static void DFSForNotConnectedGraphs(ArrayList<ArrayList<Integer>> adj,int v) {
         System.out.println();
         Boolean[] visited = new Boolean[v];
         for(int i = 0; i < v; i++)
@@ -33,13 +33,19 @@ public class Main {
             visited[i] = false;
         }
 
+        // number of disconnected nodes
+        int disconnectedNodes = 0;
+
         for(int i = 0; i < v; i++)
         {
             if(visited[i] == false)
             {
+                disconnectedNodes++;
                 graphUtils.DFS(adj, i, visited);
             }
         }
+        System.out.println();
+        System.out.println("Disconnected Nodes " + disconnectedNodes);
         
     }
 
