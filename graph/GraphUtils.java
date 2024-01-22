@@ -29,4 +29,18 @@ public class GraphUtils {
 
         }
     }
+
+    public void DFS(ArrayList<ArrayList<Integer>> adj,int s,Boolean[] visited)
+    {
+        visited[s] = true;
+        System.out.print(s + "  ");
+
+        for(int u : adj.get(s))
+        {
+            if(visited[u] == false)
+            {
+                DFS(adj,u,visited);
+            }
+        }
+    }
 }

@@ -20,6 +20,15 @@ public class Main {
         GraphUtils graphUtils = new GraphUtils();
         graphUtils.BFS(adj, v, 0);
 
+        // print the DFS
+        System.out.println();
+        Boolean[] visited = new Boolean[v];
+        for(int i = 0; i < v; i++)
+        {
+            visited[i] = false;
+        }
+        graphUtils.DFS(adj,0,visited);
+
     }
 
     private static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
