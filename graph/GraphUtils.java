@@ -43,4 +43,28 @@ public class GraphUtils {
             }
         }
     }
+
+    public boolean DetectCycleInAnUndirectedGraph(ArrayList<ArrayList<Integer>> adj,int s , Boolean[] visited,int parent)
+    {
+        visited[s] = true;
+        System.out.print(s + "  ");
+        
+        for(int u : adj.get(s))
+        {
+            if(visited[u] == false)
+            {
+                if(DetectCycleInAnUndirectedGraph(adj,u,visited,s) == true)
+                {
+                    return true;
+                }
+            }
+
+            if( u != s)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

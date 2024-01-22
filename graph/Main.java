@@ -22,6 +22,29 @@ public class Main {
 
         System.out.println("DFS traversal");
         DFSForNotConnectedGraphs(adj, v);
+        detectNumberCyclesInGraph(adj,v);
+
+    }
+
+    private static void detectNumberCyclesInGraph(ArrayList<ArrayList<Integer>> adj,int v){
+        Boolean[] visited = new Boolean[v];
+        for(int i = 0; i < v; i++)
+        {
+            visited[i] = false;
+        }
+
+
+        for(int i = 0; i < v; i++)
+        {
+            if(visited[i] == false)
+            {
+                if(graphUtils.DetectCycleInAnUndirectedGraph(adj, i, visited, -1) == true)
+                {
+                    System.out.println("Cycle detected ");
+                    break;
+                }
+            }
+        }
 
     }
 
