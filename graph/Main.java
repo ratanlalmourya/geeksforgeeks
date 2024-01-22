@@ -3,6 +3,8 @@ package graph;
 import java.util.ArrayList;
 
 public class Main {
+    
+    static GraphUtils  graphUtils = new GraphUtils();
     public static void main(String[] args) {
         int v = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -12,23 +14,33 @@ public class Main {
         }
 
         addEdge(adj, 0, 1);
-        addEdge(adj, 0, 2);
-        addEdge(adj, 1, 2);
-        addEdge(adj, 1, 3);
+        addEdge(adj, 2, 3);
+        addEdge(adj, 2, 4);
+        addEdge(adj, 3, 4);
         printGraph(adj);
-
-        GraphUtils graphUtils = new GraphUtils();
         graphUtils.BFS(adj, v, 0);
 
-        // print the DFS
+        System.out.println("DFS traversal");
+        DFSForNotConnectedGraphs(adj, v);
+
+    }
+
+    private static  void DFSForNotConnectedGraphs(ArrayList<ArrayList<Integer>> adj,int v) {
         System.out.println();
         Boolean[] visited = new Boolean[v];
         for(int i = 0; i < v; i++)
         {
             visited[i] = false;
         }
-        graphUtils.DFS(adj,0,visited);
 
+        for(int i = 0; i < v; i++)
+        {
+            if(visited[i] == false)
+            {
+                graphUtils.DFS(adj, i, visited);
+            }
+        }
+        
     }
 
     private static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
