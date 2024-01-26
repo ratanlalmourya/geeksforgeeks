@@ -24,6 +24,48 @@ public class Main {
         DFSForNotConnectedGraphs(adj, v);
         detectNumberCyclesInGraph(adj,v);
 
+        // detect cycle in directed graph
+        System.out.println("*********** directed graph ***************** ");
+        ArrayList<ArrayList<Integer>> directedAdj = new ArrayList<>();
+        v = 6;
+        for (int i = 0; i < v; i++) {
+            directedAdj.add(new ArrayList<Integer>());
+        }
+
+        addEdgeForDirectedGraph(directedAdj,0,1);
+        addEdgeForDirectedGraph(directedAdj,2,1);
+        addEdgeForDirectedGraph(directedAdj,2,3);
+        addEdgeForDirectedGraph(directedAdj,3,4);
+        addEdgeForDirectedGraph(directedAdj,4,5);
+        addEdgeForDirectedGraph(directedAdj,5,3);
+        
+        if(graphUtils.DetectCycleInAndirectedGraph(directedAdj,v))
+        {
+            System.out.println("Cycled detected !!");
+        }else {
+            System.out.println("Don't have any cycle");
+        }
+
+        // Topological Sorting
+        directedAdj = new ArrayList<ArrayList<Integer>>();
+        v = 5;
+
+        for(int i = 0; i < v; i++)
+        {
+            directedAdj.add(new ArrayList<>());
+        }
+
+        addEdgeForDirectedGraph(directedAdj, 0, 2);
+        addEdgeForDirectedGraph(directedAdj, 0, 3);
+        addEdgeForDirectedGraph(directedAdj, 2, 3);
+        addEdgeForDirectedGraph(directedAdj, 1, 3);
+        addEdgeForDirectedGraph(directedAdj, 1, 4);
+        // printGraph(directedAdj);
+
+        graphUtils.TopologicalSorting(directedAdj,v);
+        System.out.println();
+
+
     }
 
     private static void detectNumberCyclesInGraph(ArrayList<ArrayList<Integer>> adj,int v){
@@ -85,5 +127,10 @@ public class Main {
             System.out.println();
         }
     }
+
+    private static void addEdgeForDirectedGraph(ArrayList<ArrayList<Integer>> adj,int u,int v)
+    {
+        adj.get(u).add(v);
+    } 
 
 }
