@@ -64,6 +64,7 @@ public class Main {
 
         graphUtils.TopologicalSorting(directedAdj,v);
         System.out.println();
+        graphUtils.FindNumberOfCycleInGraph(directedAdj, v);
 
 
     }

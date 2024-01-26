@@ -158,5 +158,60 @@ public class GraphUtils {
 
     }
 
+    public void FindNumberOfCycleInGraph(ArrayList<ArrayList<Integer>> adj,int V)
+    {
+        Integer[] InDegree = new Integer[V];
+        Queue<Integer> queue = new LinkedList<>();
+        
+        for(int i = 0; i < V; i++)
+        {
+            InDegree[i] = 0;
+        }
+
+        for(int i = 0; i < V; i++)
+        {
+            for(Integer val:  adj.get(i))
+            {
+                InDegree[val]++;
+            }
+        }
+
+        for(int i = 0; i < V; i++)
+        {
+            if(InDegree[i] == 0)
+            {
+                queue.add(i);
+            }
+        }
+
+        int count = 0;
+
+        while(queue.isEmpty() == false)
+        {
+            Integer currentNode = queue.poll();
+            for(Integer node: adj.get(currentNode))
+            {
+                InDegree[node]--;
+
+                if(InDegree[node] == 0)
+                {
+                    queue.add(node);
+                }
+            }
+
+            if(InDegree[currentNode] == 0)
+            {
+                count++;
+            }
+        }
+
+        if(count != V)
+        {
+            System.out.println("Cycle Detected ");
+        }else {
+            System.out.println("Don't have cycle ");
+        }
+    }
+
     
 }
