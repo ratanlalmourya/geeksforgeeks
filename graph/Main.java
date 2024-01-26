@@ -55,17 +55,18 @@ public class Main {
             directedAdj.add(new ArrayList<>());
         }
 
-        addEdgeForDirectedGraph(directedAdj, 0, 2);
-        addEdgeForDirectedGraph(directedAdj, 0, 3);
-        addEdgeForDirectedGraph(directedAdj, 2, 3);
+        addEdgeForDirectedGraph(directedAdj, 0, 1);
         addEdgeForDirectedGraph(directedAdj, 1, 3);
-        addEdgeForDirectedGraph(directedAdj, 1, 4);
+        addEdgeForDirectedGraph(directedAdj, 3, 4);
+        addEdgeForDirectedGraph(directedAdj, 2, 3);
+        addEdgeForDirectedGraph(directedAdj, 2, 4);
         // printGraph(directedAdj);
 
         graphUtils.TopologicalSorting(directedAdj,v);
         System.out.println();
         graphUtils.FindNumberOfCycleInGraph(directedAdj, v);
-
+        graphUtils.TopologicalSortingUsingDFS(directedAdj,v);
+        System.out.println();
 
     }
 
@@ -77,11 +78,11 @@ public class Main {
         }
 
 
-        for(int i = 0; i < v; i++)
+        for(int u = 0; u < v; u++)
         {
-            if(visited[i] == false)
+            if(visited[u] == false)
             {
-                if(graphUtils.DetectCycleInAnUndirectedGraph(adj, i, visited, -1) == true)
+                if(graphUtils.DetectCycleInAnUndirectedGraph(adj, u, visited, -1) == true)
                 {
                     System.out.println("Cycle detected ");
                     break;

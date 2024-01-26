@@ -3,6 +3,7 @@ package graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class GraphUtils {
 
@@ -213,5 +214,42 @@ public class GraphUtils {
         }
     }
 
+    public void TopologicalSortingUsingDFS(ArrayList<ArrayList<Integer>> adj,int v)
+    {
+        boolean[] visited = new boolean[v];
+        Stack<Integer> stack = new Stack<Integer>();
+
+        for(int i=0; i < v; i++)
+        {
+            visited[i] = false;
+        }
+
+        for(int i = 0; i < v; i++)
+        {
+            if(visited[i] == false)
+            {
+                TopologicalSortingUsingDFSRec(adj,visited,stack,i);
+            }
+        }
+
+        while(stack.isEmpty() == false)
+        {
+            System.out.print(stack.pop() + " ");
+        }
+
+    }
+
+    private void TopologicalSortingUsingDFSRec(ArrayList<ArrayList<Integer>> adj,boolean[] visited,Stack<Integer> stack,int s)
+    {
+        visited[s] = true;
+        for(Integer v:  adj.get(s))
+        {
+            if(visited[v] == false)
+            {
+                TopologicalSortingUsingDFSRec(adj,visited,stack,v);
+            }
+        }
+        stack.push(s);
+    }
     
 }
