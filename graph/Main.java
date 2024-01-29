@@ -1,10 +1,13 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Main {
     
     static GraphUtils  graphUtils = new GraphUtils();
+    static ShortestPathDAG shortestPathDAG = new ShortestPathDAG();
     public static void main(String[] args) {
         int v = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -68,6 +71,50 @@ public class Main {
         graphUtils.TopologicalSortingUsingDFS(directedAdj,v);
         System.out.println();
 
+        // ================== Shortest Path In DAG  ===========================
+        LinkedList<LinkedList<AdjNode>> directedAdjWithNode = new LinkedList<>();
+        int V = 6;
+        for(int i = 0; i < V; i++)
+        {
+            directedAdjWithNode.add(new LinkedList<AdjNode>());
+        }
+
+        addEdgeInAdjNode(directedAdjWithNode,0,1,2);
+        addEdgeInAdjNode(directedAdjWithNode,0,4,1);
+        addEdgeInAdjNode(directedAdjWithNode,1,2,3);
+        addEdgeInAdjNode(directedAdjWithNode,4,2,2);
+        addEdgeInAdjNode(directedAdjWithNode,4,5,4);
+        addEdgeInAdjNode(directedAdjWithNode,2,3,6);
+        addEdgeInAdjNode(directedAdjWithNode,5,3,1);
+        System.out.println("******** print adjNode graph *************");
+        printGraphOfAdjNodes(directedAdjWithNode);
+        ShortestPathInDAG(directedAdjWithNode,V);
+
+    }
+
+    private static void ShortestPathInDAG(LinkedList<LinkedList<AdjNode>> directedAdjWithNode,int V)
+    {
+        shortestPathDAG.shortestPathInWeightedGraph(directedAdjWithNode, V);
+    }
+
+    private static void addEdgeInAdjNode(LinkedList<LinkedList<AdjNode>> directedAdjWithNode,int s,int d,int weight)
+    {
+        directedAdjWithNode.get(s).add(new AdjNode(d, weight));
+    }
+
+    private static void printGraphOfAdjNodes(LinkedList<LinkedList<AdjNode>> directedAdjWithNode) {
+
+        Iterator<LinkedList<AdjNode>> outerIter = directedAdjWithNode.iterator();
+
+        while(outerIter.hasNext())
+        {
+            Iterator<AdjNode> innerIterator = outerIter.next().iterator();
+            while(innerIterator.hasNext())
+            {
+                System.out.print(innerIterator.next().getV() + " ");
+            }
+            System.out.println();
+        }
     }
 
     private static void detectNumberCyclesInGraph(ArrayList<ArrayList<Integer>> adj,int v){
