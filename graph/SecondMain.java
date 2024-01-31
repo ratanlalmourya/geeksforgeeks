@@ -5,18 +5,26 @@ public class SecondMain {
     public static void main(String[] args) {
         
         int graph[][] = {
-                            {0, 2, 0, 6, 0},
-                            {2, 0, 3, 8, 5},
-                            {0, 3, 0, 0, 7},
-                            {6, 8, 0, 0, 9},
-                            {0, 5, 7, 9, 0},
+                           {0, 5, 3},
+                           {5, 0, 1},
+                           {3, 1, 0}
                         };
 
-        int V = 5;
+        int V = 3;
 
         // minimum spanning tree
         MinimumSpanningTree minimumSpanningTree = new MinimumSpanningTree();
-        System.out.println(minimumSpanningTree.MinimumSpanningTreeFn(graph, V));
+        // System.out.println(minimumSpanningTree.MinimumSpanningTreeFn(graph, V));
+
+
+        // dijkstras algorithm
+        DijkastraAlgo dijkastraAlgo = new DijkastraAlgo();
+        int[] distances = dijkastraAlgo.dijkastraAlgoFn(graph, 1);
+        for(int distance : distances)
+        {
+            System.out.print(distance + " ");
+        }
+        System.out.println();
 
     }
 }
