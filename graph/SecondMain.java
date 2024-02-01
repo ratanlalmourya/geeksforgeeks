@@ -16,7 +16,7 @@ public class SecondMain {
 
         // minimum spanning tree
         MinimumSpanningTree minimumSpanningTree = new MinimumSpanningTree();
-        // System.out.println(minimumSpanningTree.MinimumSpanningTreeFn(graph, V));
+        System.out.println(minimumSpanningTree.MinimumSpanningTreeFn(graph, V));
 
 
         // dijkstras algorithm
