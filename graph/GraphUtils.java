@@ -3,6 +3,7 @@ package graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class GraphUtils {
 
@@ -67,4 +68,191 @@ public class GraphUtils {
 
         return false;
     }
+<<<<<<< HEAD
+=======
+
+    public boolean DetectCycleInAndirectedGraph(ArrayList<ArrayList<Integer>> adj,int v) {
+
+        boolean[] visited = new boolean[v];
+        boolean[] recStack = new boolean[v];
+
+        for(int i = 0; i < v; i++)
+        {
+            visited[i] = false;
+            recStack[i] = false;
+        }
+
+        for(int i = 0; i < v; i++)
+        {
+            if(visited[i] == false)
+            {
+                if(DetectCycleInAndirectedGraphRec(adj,visited,recStack,i) == true)
+                {
+                    return true;
+                }
+            }
+        }
+
+
+        return false;
+    }
+
+    private boolean DetectCycleInAndirectedGraphRec(ArrayList<ArrayList<Integer>> adj,boolean[] visited,boolean[] recStack,int s)
+    {
+        visited[s] = true;
+        recStack[s] = true;
+
+        for(int u: adj.get(s))
+        {
+            if(visited[u] == false && DetectCycleInAndirectedGraphRec(adj,visited,recStack,u) == true)
+            {
+                return true;
+            }
+            else if(recStack[u] == true)
+            {
+                return true;
+            }
+        }
+        
+        recStack[s] = false;
+        return false;
+    }
+
+    public void TopologicalSorting(ArrayList<ArrayList<Integer>> adj,int V)
+    {
+        Integer[] InDegree = new Integer[V];
+        Queue<Integer> queue = new LinkedList<>();
+        
+        for(int i = 0; i < V; i++)
+        {
+            InDegree[i] = 0;
+        }
+
+        for(int i = 0; i < V; i++)
+        {
+            for(Integer val:  adj.get(i))
+            {
+                InDegree[val]++;
+            }
+        }
+
+        for(int i = 0; i < V; i++)
+        {
+            if(InDegree[i] == 0)
+            {
+                queue.add(i);
+            }
+        }
+
+        while(queue.isEmpty() == false)
+        {
+            Integer currentNode = queue.poll();
+            System.out.print(currentNode + "  ");
+            for(Integer node: adj.get(currentNode))
+            {
+                InDegree[node]--;
+
+                if(InDegree[node] == 0)
+                {
+                    queue.add(node);
+                }
+            }
+        }
+
+    }
+
+    public void FindNumberOfCycleInGraph(ArrayList<ArrayList<Integer>> adj,int V)
+    {
+        Integer[] InDegree = new Integer[V];
+        Queue<Integer> queue = new LinkedList<>();
+        
+        for(int i = 0; i < V; i++)
+        {
+            InDegree[i] = 0;
+        }
+
+        for(int i = 0; i < V; i++)
+        {
+            for(Integer val:  adj.get(i))
+            {
+                InDegree[val]++;
+            }
+        }
+
+        for(int i = 0; i < V; i++)
+        {
+            if(InDegree[i] == 0)
+            {
+                queue.add(i);
+            }
+        }
+
+        int count = 0;
+
+        while(queue.isEmpty() == false)
+        {
+            Integer currentNode = queue.poll();
+            for(Integer node: adj.get(currentNode))
+            {
+                InDegree[node]--;
+
+                if(InDegree[node] == 0)
+                {
+                    queue.add(node);
+                }
+            }
+
+            if(InDegree[currentNode] == 0)
+            {
+                count++;
+            }
+        }
+
+        if(count != V)
+        {
+            System.out.println("Cycle Detected ");
+        }else {
+            System.out.println("Don't have cycle ");
+        }
+    }
+
+    public void TopologicalSortingUsingDFS(ArrayList<ArrayList<Integer>> adj,int v)
+    {
+        boolean[] visited = new boolean[v];
+        Stack<Integer> stack = new Stack<Integer>();
+
+        for(int i=0; i < v; i++)
+        {
+            visited[i] = false;
+        }
+
+        for(int i = 0; i < v; i++)
+        {
+            if(visited[i] == false)
+            {
+                TopologicalSortingUsingDFSRec(adj,visited,stack,i);
+            }
+        }
+
+        while(stack.isEmpty() == false)
+        {
+            System.out.print(stack.pop() + " ");
+        }
+
+    }
+
+    private void TopologicalSortingUsingDFSRec(ArrayList<ArrayList<Integer>> adj,boolean[] visited,Stack<Integer> stack,int s)
+    {
+        visited[s] = true;
+        for(Integer v:  adj.get(s))
+        {
+            if(visited[v] == false)
+            {
+                TopologicalSortingUsingDFSRec(adj,visited,stack,v);
+            }
+        }
+        stack.push(s);
+    }
+    
+>>>>>>> geeksforgeeks_copy
 }
