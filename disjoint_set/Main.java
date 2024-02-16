@@ -1,5 +1,3 @@
-package disjoint_set;
-
 public class Main {
     
     static int parent[] ;

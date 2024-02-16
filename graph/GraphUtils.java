@@ -68,9 +68,7 @@ public class GraphUtils {
 
         return false;
     }
-<<<<<<< HEAD
-=======
-
+    
     public boolean DetectCycleInAndirectedGraph(ArrayList<ArrayList<Integer>> adj,int v) {
 
         boolean[] visited = new boolean[v];
@@ -254,5 +252,4 @@ public class GraphUtils {
         stack.push(s);
     }
     
->>>>>>> geeksforgeeks_copy
 }
