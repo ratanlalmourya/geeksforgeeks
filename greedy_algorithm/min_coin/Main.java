@@ -7,6 +7,19 @@ public class Main {
         int amount = 57;
         Integer coins[] = {5,10,2,1};
         System.out.println(findMinCoin(coins, amount));
+
+        // Greedy algorithm may not work for all time
+        //coins = {18,1,10}; amount = 20
+        // Application of greedy algorithms
+        /* 
+         * 1. Activity Selection 
+         * 2. Fractional Knapsack
+         * 3. Job Sequencing 
+         * 4. Prim's Algorithm
+         * 5. Kruskal's Algorithm
+         * 6. Dijkstra's Algorithm
+         * 7. Huffman Algorithm
+         */
     }
 
     private static int findMinCoin(Integer[] coins,int amount) {
