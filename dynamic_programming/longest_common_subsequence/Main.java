@@ -15,7 +15,13 @@ public class Main {
         // Call LCS function to evaluate longest common subsequence
         LcsRec lcsRec = new LcsRec();
         int ans = lcsRec.lcs(s1, s2, m, n);
-        System.out.println("Longest common subsequence " + ans);
+        System.out.println("Longest common subsequence using recursion " + ans);
+
+        // Longest common subsequence using lcs memoization
+        LcsMemo lcsMemo = new LcsMemo(m+1,n+1);
+        ans = lcsMemo.lcs(s1, s2, m, n);
+        System.out.println("Longest common subsequence using memoization  " + ans);
+
 
     }
 }
