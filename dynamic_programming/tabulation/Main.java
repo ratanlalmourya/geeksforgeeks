@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         
         System.out.println("Tabulation =====================> ");
-        int n = 5;
+        int n = 10;
         int[] tab_arr =  new int[n];
 
         // add predefined base cases in tabulation
