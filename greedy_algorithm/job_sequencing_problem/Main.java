@@ -32,17 +32,17 @@ public class Main {
             System.out.println(job.deadline + " : " + job.profit);
         }
 
-        int n = jobs.getLast().deadline;
-        Integer[] slots = new Integer[n];
-        int maxProfit = 0;
-        for (int i = 0; i < jobs.size(); i++) {
-            if(slots[jobs.get(i).deadline-1] == null)
-            {
-                slots[jobs.get(i).deadline-1] = jobs.get(i).profit;
-                maxProfit = maxProfit + jobs.get(i).profit;
-            }
-        }
-        System.out.println("Maximum Profit : " + maxProfit);
+        // int n = jobs.getLast().deadline;
+        // Integer[] slots = new Integer[n];
+        // int maxProfit = 0;
+        // for (int i = 0; i < jobs.size(); i++) {
+        //     if(slots[jobs.get(i).deadline-1] == null)
+        //     {
+        //         slots[jobs.get(i).deadline-1] = jobs.get(i).profit;
+        //         maxProfit = maxProfit + jobs.get(i).profit;
+        //     }
+        // }
+        // System.out.println("Maximum Profit : " + maxProfit);
 
     }
 }
