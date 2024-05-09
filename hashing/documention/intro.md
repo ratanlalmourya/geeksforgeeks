@@ -23,6 +23,5 @@
 
 # Direct Address Table
 
-![direct address table](./binary-tree.drawio.svg)
 
 
