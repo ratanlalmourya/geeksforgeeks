@@ -6,3 +6,10 @@
 ###  For 1 and 2 AVL and Red black trees preferred
 ### For prefix searching Trie data structure preferred
 
+# Advantage of hashing
+### Search , delete and Insert Operation performed in the O(1) Operation
+
+
+
+# Hashing Application
+
