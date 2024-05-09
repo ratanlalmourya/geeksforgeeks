@@ -1,0 +1,140 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Majority_Items",
+            "request": "launch",
+            "mainClass": "basic_data_structure.array.Majority_Items",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "max_min",
+            "request": "launch",
+            "mainClass": "basic_data_structure.array.max_min",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "rotate_arr",
+            "request": "launch",
+            "mainClass": "basic_data_structure.array.rotate_arr",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "detect_cycle.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(2)",
+            "request": "launch",
+            "mainClass": "dynamic_programming.longest_common_subsequence.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(3)",
+            "request": "launch",
+            "mainClass": "dynamic_programming.memoization.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(4)",
+            "request": "launch",
+            "mainClass": "dynamic_programming.tabulation.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(5)",
+            "request": "launch",
+            "mainClass": "graph.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "SecondMain",
+            "request": "launch",
+            "mainClass": "graph.SecondMain",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(6)",
+            "request": "launch",
+            "mainClass": "graph.bellman_ford_algo_for_shortest_path.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(7)",
+            "request": "launch",
+            "mainClass": "greedy_algorithm.activity_selection_problem.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(8)",
+            "request": "launch",
+            "mainClass": "greedy_algorithm.factional_knapsack.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(9)",
+            "request": "launch",
+            "mainClass": "greedy_algorithm.job_sequencing_problem.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(10)",
+            "request": "launch",
+            "mainClass": "greedy_algorithm.min_coin.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(11)",
+            "request": "launch",
+            "mainClass": "hashing.linearProbingInHashing.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(12)",
+            "request": "launch",
+            "mainClass": "kruskals_mini_spanning_tree_algo.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        },
+        {
+            "type": "java",
+            "name": "Main(13)",
+            "request": "launch",
+            "mainClass": "union_by_rank.Main",
+            "projectName": "geeksforgeeks_d9071113"
+        }
+    ]
+}
