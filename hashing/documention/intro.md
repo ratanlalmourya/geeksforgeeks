@@ -20,3 +20,5 @@
 5. Symbol tables in compiler / interpreters
 6. Routers
 7. Getting data from databases
+
+| colum1 | column2 | c
