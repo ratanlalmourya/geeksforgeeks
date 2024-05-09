@@ -23,5 +23,8 @@
 
 # Direct Address Table
 
+Sure! In a direct address table, instead of using a hash function to calculate an index based on a key, each key is associated with a unique index directly. This means that when you want to access a value, you can simply look up the corresponding index in the table.
+
+
 
 
