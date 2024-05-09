@@ -18,4 +18,5 @@
 3. Cryptography
 4. Caches
 5. Symbol tables in compiler / interpreters
-6. 
+6. Routers
+7. 
