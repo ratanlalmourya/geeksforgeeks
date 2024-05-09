@@ -29,6 +29,7 @@ Sure! In a direct address table, instead of using a hash function to calculate a
 1. String
 2. Large Floating point numbers
 3. Large Numbers
+4. Variable - Length Data types
 
 
 
