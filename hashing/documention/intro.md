@@ -21,4 +21,8 @@
 6. Routers
 7. Getting data from databases
 
-| colum1 | column2 | c
+# Direct Address Table
+
+![direct address table](./binary-tree.drawio.svg)
+
+
