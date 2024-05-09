@@ -14,4 +14,8 @@
 # Hashing Application
 
 1. Used as dictionary (key - value pair)
-2. 
+2. Database indexing 
+3. Cryptography
+4. Caches
+5. Symbol tables in compiler / interpreters
+6. 
