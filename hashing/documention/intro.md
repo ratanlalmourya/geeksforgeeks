@@ -13,3 +13,5 @@
 
 # Hashing Application
 
+1. Used as dictionary (key - value pair)
+2. 
