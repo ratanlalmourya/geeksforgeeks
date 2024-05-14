@@ -12,4 +12,8 @@ keys ={50, 21, 58, 17, 15, 49, 56, 22, 23, 25}
 m = No of slots in hash table
 n = No of keys to be inserted
 
-Load factor alpha
+Load factor alpha = n / m
+Time complexity of search = O(alpha + 1)
+Time complexity of insert =  O(alpha + 1)
+
+
