@@ -6,3 +6,4 @@
 hash(key) = key % 7 <br>
 keys ={50, 21, 58, 17, 15, 49, 56, 22, 23, 25}
 
+![collision handling](chaining.drawio.svg)
