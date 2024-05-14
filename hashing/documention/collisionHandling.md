@@ -7,3 +7,9 @@ hash(key) = key % 7 <br>
 keys ={50, 21, 58, 17, 15, 49, 56, 22, 23, 25}
 
 ![collision handling](chaining.drawio.svg)
+
+## Performance
+m = No of slots in hash table
+n = No of keys to be inserted
+
+Load factor alpha
