@@ -23,7 +23,7 @@ Time complexity of insert =  O(alpha + 1)
             Vector in c++
             ArrayList in java
             List in python
-    3. Self Balancing BST
+    3. Self Balancing BST =>  O(logn)
             AVL Tree
             RedBlack Tree
 
