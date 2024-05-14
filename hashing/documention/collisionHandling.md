@@ -16,4 +16,15 @@ Load factor alpha = n / m
 Time complexity of search = O(alpha + 1)
 Time complexity of insert =  O(alpha + 1)
 
+## Data structure to store the chains
+
+    1. Linked List => Search O(l) , Delete O(l), Insert(l) 
+    2. Dynamic sized arrays 
+            Vector in c++
+            ArrayList in java
+            List in python
+    3. Self Balancing BST
+            AVL Tree
+            RedBlack Tree
+
 
