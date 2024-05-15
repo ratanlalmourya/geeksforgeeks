@@ -33,4 +33,11 @@ key = (values[6] + 2) % m = 52 % 7 = 3; empty slot found so just insert values[6
 
 ![open addressing](open-addressing.drawio.svg)
 
+## How to handle deleted scenarios
+
+delete 78 from array <br/>
+find key of 78
+int key = 78 % 7 = 1 
+add Deleted at key 1 
+
 
