@@ -40,4 +40,5 @@ find key of 78
 int key = 78 % 7 = 1 
 add Deleted at key 1 
 
+![delete address](open-addressing-delete.drawio.svg)
 
