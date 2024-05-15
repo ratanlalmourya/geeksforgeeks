@@ -17,6 +17,12 @@
 
 ### Open Addressing Example  ==> 
 
+values = [65,89,78,55,32,49]; m = 7;
+
+int key = values[0] % m = 65 % 7 = 2; <br/>
+int key = values[1] % m = 89 % 7 = 5; <br/>
+int key = values[2] % m = 78 % 7 = 1; <br/>
+int key = values[3] % m = 55 % 7 = 6; <br/>
 
 
 ![open addressing](open-addressing.drawio.svg)
