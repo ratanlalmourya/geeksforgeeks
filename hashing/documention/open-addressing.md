@@ -32,3 +32,5 @@ key = (values[6] + 2) % m = 52 % 7 = 3; empty slot found so just insert values[6
 
 
 ![open addressing](open-addressing.drawio.svg)
+
+
