@@ -45,5 +45,10 @@ add Deleted at key 1
 Adding deleted will allow us to find element from entire array else keeping it empty search might stop before searching into the entire array
 
 
-### What is entire is filled and item is not presented 
+## What if entire array is filled and item is not present
+
+==> check the condition if hashed key is not same as it was in initially if it is then stop else keep searching the item in the array
+
+
+## 
 
