@@ -42,3 +42,8 @@ add Deleted at key 1
 
 ![delete address](open-addressing-delete.drawio.svg)
 
+Adding deleted will allow us to find element from entire array else keeping it empty search might stop before searching into the entire array
+
+
+### What is entire is filled and item is not presented 
+
