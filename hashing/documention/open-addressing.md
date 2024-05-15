@@ -50,5 +50,10 @@ Adding deleted will allow us to find element from entire array else keeping it e
 ==> check the condition if hashed key is not same as it was in initially if it is then stop else keep searching the item in the array
 
 
-## 
+## How to handle clustering in open addressing
+
+To avoid clustering we should use following hashing techniques instead of linear probing
+
+    1. Quadratic hashing
+    2. Double hashing
 
