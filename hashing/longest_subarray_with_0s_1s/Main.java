@@ -1,8 +1,6 @@
 package hashing.longest_subarray_with_0s_1s;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Main {
 
