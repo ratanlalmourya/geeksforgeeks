@@ -17,6 +17,11 @@ public class Main {
         System.out.println(binary_search_iterative(arr2, x2));
         System.out.println(binary_search_iterative(arr3, x3));
 
+        System.out.println("*****************************");
+        System.out.println(binary_search_recursive(arr1,x1,0,arr1.length));
+        System.out.println(binary_search_recursive(arr2, x2,0,arr2.length));
+        System.out.println(binary_search_recursive(arr3, x3,0,arr3.length));
+
     }
 
     private static Integer binary_search_iterative(Integer[] arr,Integer x) {
@@ -36,5 +41,24 @@ public class Main {
         }
 
         return -1;
+    }
+
+    private static Integer binary_search_recursive(Integer[] arr, Integer x,Integer left,Integer right){
+
+        if(left > right)
+        {
+            return -1;
+        }
+
+        Integer mid = (left + right)/2;
+
+        if(arr[mid] == x) {
+            return mid;
+        }else if(x < arr[mid]){
+            return binary_search_recursive(arr,x,left,mid-1);
+        }else {
+            return binary_search_recursive(arr, x, mid+1, right);
+        }
+        
     }
 }
