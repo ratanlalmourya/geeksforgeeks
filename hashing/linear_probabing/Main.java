@@ -1,6 +1,8 @@
 package hashing.linear_probabing;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     
@@ -26,14 +28,14 @@ public class Main {
 
     }
 
-    public static Integer[] linearProbingN1(Integer hashSize, Integer[] array, Integer sizeOfArray) {
+    public static Integer[] linearProbingN2(Integer hashSize, Integer[] array, Integer sizeOfArray) {
         Integer[] result = new Integer[hashSize];
         Arrays.fill(result, -1);
 
         for (int i = 0; i < sizeOfArray; i++) {
             Integer index = array[i]%hashSize;
             Integer prevIndex = index;
-            while (result[index] != -1) {
+            while (result[index] != array[i] && result[index] != -1) {
                 index = (index + 1)%hashSize;
                 if(prevIndex == index)
                 {
@@ -44,9 +46,28 @@ public class Main {
             if(result[index] == -1) {
                 result[index] = array[i];
             }
-
-
         }
+        return result;
+    }
+
+    public static Integer[] linearProbingN1(Integer hashSize, Integer[] array, Integer sizeOfArray) {
+        Integer[] result = new Integer[hashSize];
+        Arrays.fill(result, -1);
+
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+
+        for (int i = 0; i < sizeOfArray; i++) {
+            Integer index = array[i]%hashSize;
+            while (hashMap.containsKey(index)) {
+                index = (index + 1)%hashSize;
+            }   
+            hashMap.put(index, array[i]);   
+        }
+
+        for (Map.Entry<Integer, Integer> entry : hashMap.entrySet()) {
+            result[entry.getKey()] = entry.getValue();
+        }
+
         return result;
     }
 }

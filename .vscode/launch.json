@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "hashing.linear_probabing.Main",
+            "projectName": "geeksforgeeks_1c429a4a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "hashing.chaining.Main",
             "projectName": "geeksforgeeks_d9071113"
         },
