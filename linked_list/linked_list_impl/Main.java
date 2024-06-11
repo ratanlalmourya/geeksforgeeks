@@ -33,6 +33,9 @@ public class Main {
        head = insert_at_begin_linked_list(head,70);
        // recursive traversal
        linked_list_recursive(head);
+       insert_at_end_linked_list(head,80);
+       System.out.println();
+       linked_list_recursive(head);
     }
 
     public static void linked_list_traversal(Node head){
@@ -73,10 +76,18 @@ public class Main {
         return false;
     }
 
-    public static Node insert_at_begin_linked_list(Node head,int val)
-    {
+    public static Node insert_at_begin_linked_list(Node head,int val) {
         Node newNode = new Node(val);
         newNode.next = head;
         return newNode;
+    }
+
+    public static void insert_at_end_linked_list(Node head,int val) {
+        Node newNode = new Node(val);
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
     }
 }
