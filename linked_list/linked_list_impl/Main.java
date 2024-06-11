@@ -36,6 +36,16 @@ public class Main {
        insert_at_end_linked_list(head,80);
        System.out.println();
        linked_list_recursive(head);
+
+       // delete first node
+       head = delete_first_node_linked_list(head);
+       System.out.println();
+       linked_list_recursive(head);
+
+       // delete last node
+       head = delete_second_node_linked_list(head);
+       System.out.println();
+       linked_list_recursive(head);
     }
 
     public static void linked_list_traversal(Node head){
@@ -89,5 +99,23 @@ public class Main {
             temp = temp.next;
         }
         temp.next = newNode;
+    }
+
+    public static Node delete_first_node_linked_list(Node head) { 
+        head = head.next;
+        return head;
+    }
+
+    public static Node delete_second_node_linked_list(Node head) {
+        
+        if(head == null || head.next == null) {
+            return null;
+        }
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
     }
 }
