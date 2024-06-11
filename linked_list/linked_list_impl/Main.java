@@ -18,12 +18,27 @@ public class Main {
        node4.next = node5;
        node5.next = node6;
 
-       Node temp = head;
+       // iterative traversal
+       linked_list_traversal(head);
+       System.out.println();
+       System.out.println("*******************");
+       // recursive traversal
+       linked_list_recursive(head);
 
-       while(temp.next != null) {
-            System.out.print(temp.data + " , ");
-            temp = temp.next;
+    }
+
+    public static void linked_list_traversal(Node head){
+        while(head != null) {
+            System.out.print(head.data + " ");
+            head = head.next;
        }
+    }
 
+    public static void linked_list_recursive(Node head) {
+        if(head == null) {
+            return;
+        }
+        System.out.print(head.data + " ") ;
+        linked_list_recursive(head.next);
     }
 }
