@@ -29,6 +29,10 @@ public class Main {
        System.out.println(linked_list_search_iterative(head,20));
        System.out.println(linked_list_search_recursive(head,60));
 
+       // insert at the beggining
+       head = insert_at_begin_linked_list(head,70);
+       // recursive traversal
+       linked_list_recursive(head);
     }
 
     public static void linked_list_traversal(Node head){
@@ -67,5 +71,12 @@ public class Main {
             head = head.next;
         }
         return false;
+    }
+
+    public static Node insert_at_begin_linked_list(Node head,int val)
+    {
+        Node newNode = new Node(val);
+        newNode.next = head;
+        return newNode;
     }
 }
