@@ -24,6 +24,10 @@ public class Main {
        System.out.println("*******************");
        // recursive traversal
        linked_list_recursive(head);
+       System.out.println("*******************");
+       // iterative search
+       System.out.println(linked_list_search_iterative(head,20));
+       System.out.println(linked_list_search_recursive(head,60));
 
     }
 
@@ -40,5 +44,28 @@ public class Main {
         }
         System.out.print(head.data + " ") ;
         linked_list_recursive(head.next);
+    }
+
+    public static Boolean linked_list_search_iterative(Node head,Integer val) {
+
+        if(head == null) {
+            return false;
+        }
+
+        if(head.data == val) {
+            return true;
+        }
+
+        return linked_list_search_iterative(head.next, val);
+    }
+
+    public static Boolean linked_list_search_recursive(Node head,Integer val) {
+        while (head != null) {
+            if(head.data == val) {
+                return true;
+            }
+            head = head.next;
+        }
+        return false;
     }
 }
