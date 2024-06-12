@@ -23,16 +23,16 @@ public class Main {
 
         Node newNode = new Node(val);
         Node temp = head;
+        if(temp == null) {
+            return newNode;
+        }
 
         if(temp.data > val) {
             newNode.next = temp;
             return newNode;
         }
 
-        while (temp != null) {
-            if(temp.next == null || temp.next.data > val) {
-                break;
-            }
+        while (temp.next != null && temp.next.data < val) {
             temp = temp.next;
         }
         newNode.next = temp.next;
