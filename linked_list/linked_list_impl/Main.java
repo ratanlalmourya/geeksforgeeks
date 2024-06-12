@@ -43,7 +43,12 @@ public class Main {
        linked_list_recursive(head);
 
        // delete last node
-       head = delete_second_node_linked_list(head);
+       head = delete_last_node_linked_list(head);
+       System.out.println();
+       linked_list_recursive(head);
+
+       // inserted at the given position
+       head = insert_node_at_given_position_linked_list(head,120,4);
        System.out.println();
        linked_list_recursive(head);
     }
@@ -106,7 +111,7 @@ public class Main {
         return head;
     }
 
-    public static Node delete_second_node_linked_list(Node head) {
+    public static Node delete_last_node_linked_list(Node head) {
         
         if(head == null || head.next == null) {
             return null;
@@ -116,6 +121,19 @@ public class Main {
             temp = temp.next;
         }
         temp.next = null;
+        return head;
+    }
+
+    public static Node insert_node_at_given_position_linked_list(Node head,int val,int pos) {
+
+        Node temp = head;
+        for (int i = 1; i <= pos - 2; i++) {
+            temp = temp.next;
+        }
+
+        Node newNode = new Node(val);
+        newNode.next = temp.next.next;
+        temp.next = newNode;
         return head;
     }
 }
