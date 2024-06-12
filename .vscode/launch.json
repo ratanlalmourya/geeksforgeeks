@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "linked_list.middle_of_linked_list.Main",
+            "projectName": "geeksforgeeks_1c429a4a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "linked_list.sorted_inserted_in_linklist.Main",
             "projectName": "geeksforgeeks_1c429a4a"
         },
