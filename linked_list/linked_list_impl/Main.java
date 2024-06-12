@@ -48,7 +48,7 @@ public class Main {
        linked_list_recursive(head);
 
        // inserted at the given position
-       head = insert_node_at_given_position_linked_list(head,120,4);
+       head = insert_node_at_given_position_linked_list(head,120,1);
        System.out.println();
        linked_list_recursive(head);
     }
@@ -125,14 +125,17 @@ public class Main {
     }
 
     public static Node insert_node_at_given_position_linked_list(Node head,int val,int pos) {
+        Node newNode = new Node(val);
 
+        if(pos == 1){
+            newNode.next = head;
+            return newNode;
+        }
         Node temp = head;
-        for (int i = 1; i <= pos - 2; i++) {
+        for (int i = 1; i <= pos - 2 && temp != null; i++) {
             temp = temp.next;
         }
-
-        Node newNode = new Node(val);
-        newNode.next = temp.next.next;
+        newNode.next = temp.next;
         temp.next = newNode;
         return head;
     }
