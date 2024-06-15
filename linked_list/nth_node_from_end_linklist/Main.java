@@ -9,15 +9,12 @@ public class Main {
         Node node3 = new Node(30);
         Node node4 = new Node(40);
         Node node5 = new Node(50);
- 
         // link nodes
         head.next = node2;
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
         Integer n = 2;
-
-        
 
         System.out.println(nth_node_from_end_of_linklist(head,n));
     }
