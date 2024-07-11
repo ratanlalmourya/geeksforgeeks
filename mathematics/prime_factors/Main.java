@@ -27,6 +27,10 @@ public class Main {
                 n = n / i;
             } 
         }
+
+        if(n > 1) {
+            primeFactors.add(n);
+        }
         return primeFactors;
     }
 }
