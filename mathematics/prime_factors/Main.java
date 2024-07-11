@@ -6,16 +6,17 @@ public class Main {
     
     public static void main(String[] args) {
         
-        ArrayList<Integer> result = find_prime_factors_v1(415);
+        ArrayList<Integer> result = find_prime_factors_v1(1001);
 
         //315  105 35 7
 
         for (Integer primeFactor : result) {
             System.out.print(primeFactor + " ");
         }
+        System.out.println();
         System.out.println("**************  Efficient Solution *******************");
         // 5 7    11 13    17 19     23 25   29 32    35 37   41 43
-        result = find_prime_factors_effcient_solution(415);
+        result = find_prime_factors_effcient_solution(1001);
         for (Integer primeFactor : result) {
             System.out.print(primeFactor + " ");
         }
