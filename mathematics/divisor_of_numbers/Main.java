@@ -1,4 +1,4 @@
-package mathematics.divisora_of_numbers;
+package mathematics.divisor_of_numbers;
 
 import java.util.ArrayList;
 
