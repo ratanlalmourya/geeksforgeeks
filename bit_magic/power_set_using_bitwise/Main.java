@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         String s = "abc";
         power_set_using_bitwsise_v1(s);
+        power_set_using_bitwsise_v2(s);
     }
 
     private static void power_set_using_bitwsise_v1(String str) {
@@ -24,6 +25,20 @@ public class Main {
 
             System.out.println(sp);
             
+        }
+    }
+
+    private static void power_set_using_bitwsise_v2(String str) {
+        Integer k = str.length();
+        Integer n = 1<<k;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < k; j++) {
+                if((i & (1<<j)) != 0) {
+                    System.out.print(str.charAt(j));
+                }
+            }
+            System.out.print("\n");
         }
     }
 
